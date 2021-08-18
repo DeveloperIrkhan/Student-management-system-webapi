@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Student-management-software-webapi", "Student-management-software-webapi\Student-management-software-webapi.csproj", "{ED0D5BCF-2A10-418F-B65D-31C3C1F79260}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{C54D7FE9-F3C8-4A2F-8394-4E090E88EBDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ED0D5BCF-2A10-418F-B65D-31C3C1F79260}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED0D5BCF-2A10-418F-B65D-31C3C1F79260}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED0D5BCF-2A10-418F-B65D-31C3C1F79260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C54D7FE9-F3C8-4A2F-8394-4E090E88EBDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54D7FE9-F3C8-4A2F-8394-4E090E88EBDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54D7FE9-F3C8-4A2F-8394-4E090E88EBDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54D7FE9-F3C8-4A2F-8394-4E090E88EBDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
