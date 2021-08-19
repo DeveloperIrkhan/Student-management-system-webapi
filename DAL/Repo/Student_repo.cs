@@ -19,7 +19,7 @@ namespace DAL.Repo
             _context.Add(obj);
         }
 
-        public void deleteStudent(int Id)
+        public void DeleteStudent(int Id)
         {
             var result = _context.GetStudents.Find(Id);
             if (result != null)
@@ -28,23 +28,23 @@ namespace DAL.Repo
             }
         }
 
-        public IEnumerable<Students> GetAllStudents()
+        public IEnumerable<Student> GetAllStudents()
         {
             return _context.GetStudents;
         }
 
-        public Students GetUser(int Id)
+        public Student GetUser(int Id)
         {
             var student =  _context.GetStudents.Find(Id);
             return student;
         }
 
-        public bool saveChanges()
+        public bool SaveChanges()
         {
             return _context.SaveChanges() > 0;
         }
 
-        public void update(object obj)
+        public void Update(object obj)
         {
             _context.Update(obj);
         }

@@ -13,11 +13,11 @@ namespace DAL.Std_DbContext
         {
 
         }
-        public DbSet<Students> GetStudents { get; set; }
+        public DbSet<Student> GetStudents { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)
         {
-            mb.Entity<Students>().ToTable("Student_Tbl");
+            mb.Entity<Student>().ToTable("Student_Tbl");
         }
     }
 }

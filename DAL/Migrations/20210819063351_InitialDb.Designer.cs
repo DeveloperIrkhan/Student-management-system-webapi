@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DAL.Migrations
 {
     [DbContext(typeof(Student_Context))]
-    [Migration("20210818075254_InitialDb")]
+    [Migration("20210819063351_InitialDb")]
     partial class InitialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,33 +28,29 @@ namespace DAL.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Department")
-                        .HasColumnType("text");
+                    b.Property<int>("Department")
+                        .HasColumnType("integer");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("InterviewMarks")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("LastName")
                         .HasColumnType("text");
 
                     b.Property<string>("MiddleName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("PhoneNo")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("RegisterationNo")
-                        .HasColumnType("text");
-
-                    b.Property<string>("TestMarks")
-                        .HasColumnType("text");
-
-                    b.Property<string>("TotalMarks")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("ID");

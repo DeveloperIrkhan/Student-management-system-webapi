@@ -8,11 +8,11 @@ namespace DAL.Repo
     public interface IStudent_repo
     {
         void Add(object obj);
-        void update(object obj);
-        Students GetUser(int Id);
-        IEnumerable<Students> GetAllStudents();
-        bool saveChanges();
-        void deleteStudent(int Id);
+        void Update(object obj);
+        Student GetUser(int Id);
+        IEnumerable<Student> GetAllStudents();
+        bool SaveChanges();
+        void DeleteStudent(int Id);
 
     }
 }

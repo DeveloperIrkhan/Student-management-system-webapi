@@ -13,16 +13,13 @@ namespace DAL.Migrations
                 {
                     ID = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    FirstName = table.Column<string>(type: "text", nullable: true),
-                    MiddleName = table.Column<string>(type: "text", nullable: true),
+                    FirstName = table.Column<string>(type: "text", nullable: false),
+                    MiddleName = table.Column<string>(type: "text", nullable: false),
                     LastName = table.Column<string>(type: "text", nullable: true),
-                    RegisterationNo = table.Column<string>(type: "text", nullable: true),
-                    TestMarks = table.Column<string>(type: "text", nullable: true),
-                    InterviewMarks = table.Column<string>(type: "text", nullable: true),
-                    TotalMarks = table.Column<string>(type: "text", nullable: true),
-                    PhoneNo = table.Column<string>(type: "text", nullable: true),
-                    Address = table.Column<string>(type: "text", nullable: true),
-                    Department = table.Column<string>(type: "text", nullable: true)
+                    RegisterationNo = table.Column<string>(type: "text", nullable: false),
+                    PhoneNo = table.Column<string>(type: "text", nullable: false),
+                    Address = table.Column<string>(type: "text", nullable: false),
+                    Department = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

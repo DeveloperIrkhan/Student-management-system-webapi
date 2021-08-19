@@ -1,21 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DAL.Models
 {
-    public class Students
+    [Table("Student_Tbl")]
+    public class Student
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string MiddleName { get; set; }
         public string LastName { get; set; }
+        [Required]
         public string RegisterationNo { get; set; }
-        public string TestMarks { get; set; }
-        public string InterviewMarks { get; set; }
-        public string TotalMarks { get; set; }
+        [Required]
         public string PhoneNo { get; set; }
+        [Required]
         public string Address { get; set; }
-        public string Department { get; set; }
+        [Required]
+        public Department Department { get; set; }
     }
 }
