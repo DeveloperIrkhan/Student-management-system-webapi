@@ -10,11 +10,11 @@ namespace Student_management_software_webapi.Models
 {
     public class StudentModels
     {
-        
+
         [JsonProperty(PropertyName = "FirstName")]
         [Required]
         public string FirstName { get; set; }
-        
+
         [JsonProperty(PropertyName = "MiddleName")]
         public string MiddleName { get; set; }
         

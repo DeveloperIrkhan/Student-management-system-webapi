@@ -19,7 +19,7 @@ namespace Student_management_software_webapi
     public class Startup
     {
         private readonly IConfiguration _config;
-
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             _config = configuration;
@@ -29,6 +29,17 @@ namespace Student_management_software_webapi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:3000").AllowAnyHeader()
+                                                  .AllowAnyMethod();
+                                      builder.WithOrigins("https://idux.datazoo.com").AllowAnyHeader()
+                                                  .AllowAnyMethod();
+                                  });
+            });
             services.AddDbContextPool<Student_Context>(options =>
                 options.UseNpgsql(
                     _config.GetConnectionString("StudentString")));
@@ -49,6 +60,7 @@ namespace Student_management_software_webapi
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {
