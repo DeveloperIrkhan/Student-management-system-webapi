@@ -52,13 +52,13 @@ namespace Student_management_software_webapi.Controllers
         #endregion
 
         #region Delete Student
-        [HttpPost]
+        [HttpDelete]
         [Route("DeleteStudent/{Id}")]
-        public JsonResult DeleteStudent(int Id)
+        public async Task<IActionResult> DeleteStudent(int Id)
         {
-            _repo.DeleteStudent(Id);
+            await _repo.DeleteStudent(Id);
             _repo.SaveChanges();
-            return new JsonResult("");
+            return Ok();
         }
 
         #endregion

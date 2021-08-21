@@ -39,7 +39,7 @@ namespace DAL.Repo
         #endregion
 
         #region Delete Student
-        public void DeleteStudent(int Id)
+        public async Task DeleteStudent(int Id)
         {
             var result = _context.GetStudents.Find(Id);
             if (result != null)

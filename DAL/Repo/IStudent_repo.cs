@@ -14,7 +14,7 @@ namespace DAL.Repo
         public Task<Student> GetStudent(int Id);
         public Task<List<Student>> GetAllStudents();
         bool SaveChanges();
-        void DeleteStudent(int Id);
+        Task DeleteStudent(int Id);
 
     }
 }
