@@ -41,7 +41,7 @@ namespace DAL.Repo
         #region Delete Student
         public async Task DeleteStudent(int Id)
         {
-            var result = _context.GetStudents.Find(Id);
+            var result = await _context.GetStudents.FindAsync(Id);
             if (result != null)
             {
                 _context.Remove(result);

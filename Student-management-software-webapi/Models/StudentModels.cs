@@ -36,6 +36,6 @@ namespace Student_management_software_webapi.Models
         
         [JsonProperty(PropertyName = "Department")]
         [Required] 
-        public Department Department { get; set; }
+        public string Department { get; set; }
     }
 }

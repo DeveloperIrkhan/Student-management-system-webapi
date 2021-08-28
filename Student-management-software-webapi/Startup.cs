@@ -31,13 +31,12 @@ namespace Student_management_software_webapi
         {
             services.AddCors(options =>
             {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
+                options.AddDefaultPolicy(
                                   builder =>
                                   {
-                                      builder.WithOrigins("http://localhost:3000").AllowAnyHeader()
-                                                  .AllowAnyMethod();
-                                      builder.WithOrigins("https://idux.datazoo.com").AllowAnyHeader()
-                                                  .AllowAnyMethod();
+                                      builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                                      //builder.WithOrigins("http://localhost:3000").AllowAnyHeader()
+                                      //            .AllowAnyMethod();
                                   });
             });
             services.AddDbContextPool<Student_Context>(options =>
@@ -60,7 +59,7 @@ namespace Student_management_software_webapi
             app.UseRouting();
 
             app.UseAuthorization();
-            app.UseCors(MyAllowSpecificOrigins);
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {

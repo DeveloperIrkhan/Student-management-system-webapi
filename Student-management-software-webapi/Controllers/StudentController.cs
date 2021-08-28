@@ -23,6 +23,13 @@ namespace Student_management_software_webapi.Controllers
 
         #region Get All Students
         [HttpGet]
+        [Route("Students")]
+        public JsonResult Students()
+        {
+            var result = _repo.GetAllStudents();
+            return new JsonResult(result);
+        }
+        [HttpGet]
         [Route("GetStudents")]
         public async Task<IActionResult> GetStudents()
         {
