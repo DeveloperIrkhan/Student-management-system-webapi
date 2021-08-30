@@ -70,7 +70,7 @@ namespace DAL.Repo
         #endregion
 
         #region Get Student by Id
-        public async Task<Student> GetStudent(int Id)
+        public async Task<List<Student>> GetStudent(int Id)
         {
             //var student =  _context.GetStudents.Find(Id);
             var student = await _context.GetStudents.Where(x => x.ID == Id)
@@ -84,7 +84,7 @@ namespace DAL.Repo
                     PhoneNo = x.PhoneNo,
                     Address = x.Address,
                     Department = x.Department
-                }).FirstOrDefaultAsync();
+                }).ToListAsync();
             return student;
         } 
         #endregion

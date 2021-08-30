@@ -11,7 +11,7 @@ namespace DAL.Repo
         Task<Student> Add(Student student);
         void Update(object obj);
         Task UpdateStudentAsync(int StudentId, Student student);
-        public Task<Student> GetStudent(int Id);
+        public Task<List<Student>> GetStudent(int Id);
         public Task<List<Student>> GetAllStudents();
         bool SaveChanges();
         Task DeleteStudent(int Id);
